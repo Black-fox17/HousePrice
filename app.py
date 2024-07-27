@@ -12,8 +12,10 @@ house_age = st.text_input("Please enter House age: ")
 num_bedrooms = st.text_input("Please enter Number of Bedrooms: ")
 num_bathrooms = st.text_input("Please enter Number of Bathrooms: ")
 area = st.text_input("Please enter Area (in sq ft): ")
-location = st.text_input("Please enter Location:[Urban,Suburban,Rural] ")
-
+location = st.selectbox(
+    'Choose Location:',
+    ('Urban', 'Suburban', 'Rural')
+)
 # Ensure all inputs are provided
 if st.button("Predict Price"):
     if not all([house_age, num_bedrooms, num_bathrooms, area, location]):
