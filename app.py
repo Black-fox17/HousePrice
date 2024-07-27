@@ -3,7 +3,6 @@ import pickle
 import numpy as np
 # Set up the title and subheader
 st.title("House Price Predictor")
-st.subheader("Welcome to the House Price Predictor")
 st.subheader("ABDUR-RAZAQ SAYFULLAH ADEBOLA House price predictor")
 # Display a warning message
 st.warning("Please fill out the form below:")
