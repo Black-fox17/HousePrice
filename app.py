@@ -27,20 +27,28 @@ if st.button("Predict Price"):
             num_bathrooms = int(num_bathrooms)
             area = float(area)
             location = location.strip().lower()
+            value = False
             if location == "urban":
                 loc_int = 0
+                value = True
             elif location == "suburban":
                 loc_int = 1
+                value = True
             elif location == "rural":
                 loc_int = 2
+                value = True
 
-            input_values = np.array([house_age, num_bedrooms, num_bathrooms, area, loc_int]).reshape(1,-1)
-            with open("prediction.pkl","rb") as file:
-                model = pickle.load(file)
-            predicted_price = model.predict(input_values)
-            predicted_price = predicted_price.tolist()[0]
-            # Display the predicted price
-            st.success(f"Predicted House Price: ${predicted_price:,.2f}")
+
+            if value == True:
+                input_values = np.array([house_age, num_bedrooms, num_bathrooms, area, loc_int]).reshape(1,-1)
+                with open("prediction.pkl","rb") as file:
+                    model = pickle.load(file)
+                predicted_price = model.predict(input_values)
+                predicted_price = predicted_price.tolist()[0]
+                # Display the predicted price
+                st.success(f"Predicted House Price: ${predicted_price:,.2f}")
+            else:
+                st.error("Please enter any values in [Suburban,Urban,Rural]")
 
         except ValueError:
             st.error("Please enter valid numbers for House Age, Number of Bedrooms, Number of Bathrooms, and Area.")
