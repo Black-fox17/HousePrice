@@ -4,7 +4,7 @@ import numpy as np
 # Set up the title and subheader
 st.title("House Price Predictor")
 st.subheader("Welcome to the House Price Predictor")
-
+st.subheader("ABDUR-RAZAQ SAYFULLAH ADEBOLA House price predictor")
 # Display a warning message
 st.warning("Please fill out the form below:")
 
@@ -48,7 +48,7 @@ if st.button("Predict Price"):
                 # Display the predicted price
                 st.success(f"Predicted House Price: ${predicted_price:,.2f}")
             else:
-                st.error("Please enter any values in [Suburban,Urban,Rural]")
+                st.error("Please enter any values in [Suburban,Urban,Rural] for the Location Field")
 
         except ValueError:
             st.error("Please enter valid numbers for House Age, Number of Bedrooms, Number of Bathrooms, and Area.")
