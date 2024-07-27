@@ -6,14 +6,14 @@ st.title("House Price Predictor")
 st.subheader("Welcome to the House Price Predictor")
 
 # Display a warning message
-st.warning("Please fill out the form below with numbers only:")
+st.warning("Please fill out the form below:")
 
 # Input fields for house attributes
 house_age = st.text_input("Please enter House age: ")
 num_bedrooms = st.text_input("Please enter Number of Bedrooms: ")
 num_bathrooms = st.text_input("Please enter Number of Bathrooms: ")
 area = st.text_input("Please enter Area (in sq ft): ")
-location = st.text_input("Please enter Location: ")
+location = st.text_input("Please enter Location:[Urban,Suburban,Rural] ")
 
 # Ensure all inputs are provided
 if st.button("Predict Price"):
